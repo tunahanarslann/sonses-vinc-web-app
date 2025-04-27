@@ -1,0 +1,27 @@
+@import "../../styles/index.scss";
+
+.aboutUsContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: $fontEudoxus, sans-serif;
+  color: $primary-color;
+  gap: 30px;
+  padding: 20px;
+  max-width: 550px;
+  @include max($tablet-m) {
+    gap: 10px;
+    padding: 10px;
+    max-width: 490px;
+  }
+  @include max($tablet-s) {
+    max-width: 430px;
+  }
+  .title {
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 700;
+  }
+  .text {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 500;
+  }
+}

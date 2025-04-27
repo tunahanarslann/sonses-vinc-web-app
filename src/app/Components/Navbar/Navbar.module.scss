@@ -1,0 +1,82 @@
+@import "../../styles/index.scss";
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 120px;
+  padding: 0 20px;
+  font-family: $fontEudoxus, sans-serif;
+  position: relative;
+  @include max($desktop-s) {
+    height: 100px;
+  }
+  @include max($tablet-m) {
+    height: 80px;
+  }
+  @include max($tablet-s) {
+    padding: 0 10px;
+  }
+  .logoLink {
+    text-decoration: none;
+    .navbarLogo {
+      max-width: 300px;
+      max-height: 120px;
+      @include max($desktop-s) {
+        max-width: 250px;
+        max-height: 100px;
+      }
+      @include max($tablet-m) {
+        max-width: 200px;
+        max-height: 80px;
+      }
+      .logoImg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .navbarMenuBox {
+    display: flex;
+    .navbarMenu {
+      display: flex;
+      gap: 20px;
+      @include max($tablet-m) {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        right: 0;
+      }
+      &.mobile {
+        display: flex;
+        padding: 15px 0;
+        z-index: 999;
+        background-color: $secondary-bg-color;
+        box-shadow: 0 2px 4px $shadow-color;
+      }
+    }
+  }
+
+  .mobileMenuBtnBox {
+    display: none;
+    @include max($tablet-m) {
+      display: flex;
+      width: 32px;
+      height: 32px;
+      justify-content: center;
+      align-items: center;
+    }
+    .mobileMenuBtn {
+      width: 100%;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+}

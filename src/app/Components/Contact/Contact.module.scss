@@ -1,0 +1,66 @@
+@import "../../styles/index.scss";
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: $fontEudoxus, sans-serif;
+  color: $primary-color;
+  gap: 40px;
+  padding: 20px;
+  @include max($tablet-m) {
+    gap: 25px;
+    padding: 10px;
+  }
+  .contactHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include max($tablet-m) {
+      gap: 10px;
+    }
+    .title {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 700;
+    }
+    .text {
+      font-size: clamp(16px, 2.5vw, 20px);
+      font-weight: 500;
+    }
+  }
+  .contactCards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include max($tablet-m) {
+      gap: 20px;
+    }
+    .contactCard {
+      display: flex;
+      gap: 20px;
+      .phoneIcon {
+        @include max($tablet-s) {
+          width: 54px;
+          height: 54px;
+        }
+      }
+      .contactInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @include max($tablet-s) {
+          gap: 4px;
+        }
+        .phoneNumber {
+          font-size: 16px;
+        }
+        .name {
+          font-size: 20px;
+          font-weight: 700;
+          @include max($tablet-s) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

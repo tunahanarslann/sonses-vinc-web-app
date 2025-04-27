@@ -1,0 +1,26 @@
+@import "../../styles/index.scss";
+
+.ourServicesContainer{
+    display: flex;
+    flex-direction: column;
+    font-family: $fontEudoxus, sans-serif;
+    color: $primary-color;
+    gap: 40px;
+    padding: 20px;
+    @include max($tablet-m){
+        gap: 20px;
+        padding: 10px;
+    }
+    .title{
+        font-size: clamp(28px, 4.5vw, 48px);
+        font-weight: 700;
+    }
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        @include max($tablet-m){
+            gap: 30px;
+        }
+    }
+}

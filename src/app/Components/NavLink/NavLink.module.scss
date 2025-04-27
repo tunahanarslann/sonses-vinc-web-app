@@ -1,0 +1,49 @@
+@import "../../styles/index.scss";
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $fontEudoxus, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  color: $primary-color;
+  text-decoration: none;
+  position: relative;
+
+  &:not(.active):hover {
+    &::after {
+      animation: slideIn 0.3s ease-out forwards;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: $secondary-color;
+    transition: width 0.3s ease-out;
+    border-radius: 2px;
+  }
+
+  @keyframes slideIn {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
+.active {
+  color: $secondary-color;
+  border-bottom: 3px solid $secondary-color;
+  border-radius: 2px;
+  &::after {
+    display: none;
+  }
+}

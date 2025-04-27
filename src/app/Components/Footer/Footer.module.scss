@@ -1,0 +1,61 @@
+@import "../../styles/index.scss";
+
+.footerContainer {
+  width: 100%;
+  padding: 40px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $fontEudoxus;
+  color: $primary-color;
+  gap: 2px;
+  @include max($tablet-l) {
+    padding: 30px 20px 20px 20px;
+  }
+  @include max($tablet-m) {
+    padding: 20px 10px 10px 10px;
+  }
+  .title {
+    font-size: 18px;
+    text-align: center;
+    @include max($tablet-s) {
+      font-size: 16px;
+    }
+  }
+
+  .footerDescBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3px;
+    .desc {
+      font-size: 14px;
+      font-weight: 600;
+      @include max($tablet-s) {
+        font-size: 12px;
+      }
+    }
+    .footerTextBox {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      .footerText {
+        font-size: 14px;
+        font-weight: 600;
+        @include max($tablet-s) {
+          font-size: 12px;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $secondary-color;
+        font-size: 14px;
+        font-weight: 600;
+        @include max($tablet-s) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

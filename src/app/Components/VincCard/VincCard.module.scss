@@ -1,0 +1,84 @@
+@import "../../styles/index.scss";
+
+.cardContainer {
+  display: flex;
+  gap: 30px;
+  font-family: $fontEudoxus, sans-serif;
+  border: 16px solid $white;
+  background-color: $white;
+  border-radius: 4px;
+  @include max($tablet-l) {
+    flex-direction: column;
+    gap: 20px;
+  }
+  @include max($tablet-s) {
+    gap: 10px;
+    border: 8px solid $white;
+  }
+  .imgBox {
+    max-width: 560px;
+    max-height: 420px;
+    @include max($tablet-s) {
+      max-width: 400px;
+      max-height: 300px;
+    }
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .contentBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 220px;
+    width: 420px;
+    color: $primary-color;
+    @include max($tablet-l) {
+      width: 100%;
+    }
+    .descriptionBox {
+      .description {
+        font-size: 28px;
+        font-weight: 500;
+        @include max($tablet-s) {
+          font-size: 22px;
+        }
+      }
+    }
+    .locationBox {
+      .locationTitle {
+        font-size: 28px;
+        @include max($tablet-s) {
+          font-size: 22px;
+        }
+      }
+      .location {
+        font-size: 24px;
+        font-weight: 500;
+        @include max($tablet-s) {
+          font-size: 20px;
+        }
+      }
+    }
+    .diagramBox {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+      .diagramTitle {
+        font-size: 28px;
+        @include max($tablet-s) {
+          font-size: 22px;
+        }
+      }
+      .diagramImg {
+        width: 100%;
+        max-height: 275px;
+        @include max($tablet-s) {
+          max-height: 225px;
+        }
+      }
+    }
+  }
+}
