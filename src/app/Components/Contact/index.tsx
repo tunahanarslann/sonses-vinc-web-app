@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./Contact.module.scss";
 import PhoneIcon from "../../../../public/Contact/phone.svg";

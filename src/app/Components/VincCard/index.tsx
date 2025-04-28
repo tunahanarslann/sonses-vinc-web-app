@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./VincCard.module.scss";
 import Image, { StaticImageData } from "next/image";

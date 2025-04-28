@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./LayoutWrapper.module.scss";
 import Navbar from "../Navbar";

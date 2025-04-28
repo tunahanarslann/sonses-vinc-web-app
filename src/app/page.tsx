@@ -1,4 +1,3 @@
-"use client";
 import "./page.scss";
 import HomepageSlider from "./Components/HomepageSlider";
 import OurServices from "./Components/OurServices";

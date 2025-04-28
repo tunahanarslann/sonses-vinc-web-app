@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./AboutUs.module.scss";
 
@@ -7,7 +6,7 @@ const AboutUs = () => {
     <div className={styles.aboutUsContainer}>
       <div className={styles.title}>Hakkımızda</div>
       <p className={styles.text}>
-        2008'de kendi firmamızda kullanmak üzere aldığımız vinçle başlayan
+        2008&apos;de kendi firmamızda kullanmak üzere aldığımız vinçle başlayan
         işlerimiz zamanla bu sektöre yönelmiştir. Araçlarımızın her yıl makine
         mühendisi onaylı periyodik kontrolü yapılamaktadır. İş güvenliklerinin
         istediği evraklar tamdır.
