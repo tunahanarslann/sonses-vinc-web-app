@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/iletisim`,
+      url: `https://www.sonsesvinc.com//iletisim`,
       lastModified: new Date(),
       changeFrequency: "always",
       priority: 0.9,
