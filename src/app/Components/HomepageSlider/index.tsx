@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./HomepageSlider.module.scss";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination} from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
@@ -11,7 +11,7 @@ import Vinc1 from "../../../../public/HomepageSlider/vinc_kirmizi_1.png";
 import Vinc2 from "../../../../public/HomepageSlider/vinc_kirmizi_2.png";
 import Vinc3 from "../../../../public/HomepageSlider/vinc_sari_1.png";
 import Vinc4 from "../../../../public/HomepageSlider/vinc_yesil.png";
-import Vinc5 from "../../../../public/HomepageSlider/vinc_sari_2.png"
+import Vinc5 from "../../../../public/HomepageSlider/vinc_sari_2.png";
 
 const sliderData = [
   { id: "1", image: Vinc1, title: "vinc_kirmizi_1" },
@@ -26,18 +26,19 @@ const HomepageSlider = () => {
     <div className={styles.sliderContainer}>
       <Swiper
         className={styles.slider}
-        modules={[ Autoplay, Pagination]}
+        modules={[Autoplay, Pagination]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        {sliderData.map((slide) => (
+        {sliderData.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <Image
               className={styles.sliderImg}
               src={slide.image}
               alt={slide.title}
               fill
+              priority={index === 0}
             />
           </SwiperSlide>
         ))}
