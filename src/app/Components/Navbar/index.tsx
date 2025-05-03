@@ -50,7 +50,7 @@ const Navbar = () => {
       </div>
 
       <div className={styles.mobileMenuBtnBox}>
-        <button className={styles.mobileMenuBtn} onClick={ToggleMenu}>
+        <button className={styles.mobileMenuBtn} aria-label="menu-btn" onClick={ToggleMenu}>
           {!isOpen ? (
             <MobileMenuIcon width={32} height={32} />
           ) : (

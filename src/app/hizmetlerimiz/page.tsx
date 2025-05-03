@@ -10,6 +10,7 @@ export const metadata: Metadata ={
 const Hizmetlerimiz = () => {
   return (
     <div className={styles.ourServicesPageContainer}>
+      <h1 style={{position: "absolute", left:"-9999px"}}>Hizmetlerimiz</h1>
       <OurServices/>
     </div>
   );

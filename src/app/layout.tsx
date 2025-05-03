@@ -42,10 +42,10 @@ const eudoxusSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sonses Vinç",
+    default: "Sonses Vinç | İstanbul Vinç Kiralama | Samsun Vinç Kiralama",
     template: "%s - Sonses Vinç"
   },
-  description: "İstanbul ve Samsun'da vinç hizmetleri için bizimle iletişime geçebilirsiniz.",
+  description: "İstanbul ve Samsun'da vinç kiralama hizmetleri için bizimle iletişime geçebilirsiniz.",
   twitter: {
     card: "summary_large_image"
   }

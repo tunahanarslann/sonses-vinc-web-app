@@ -10,6 +10,7 @@ export const metadata: Metadata ={
 const İletişim = () => {
   return (
     <div className={styles.contactPageContainer}>
+      <h1 style={{position: "absolute", left:"-9999px"}}>İletişim</h1>
       <Contact />
     </div>
   );

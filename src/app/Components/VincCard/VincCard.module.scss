@@ -1,6 +1,7 @@
 @import "../../styles/index.scss";
 
 .cardContainer {
+  max-width: 1042px;
   display: flex;
   gap: 30px;
   font-family: $fontEudoxus, sans-serif;
@@ -10,10 +11,12 @@
   @include max($tablet-l) {
     flex-direction: column;
     gap: 20px;
+    max-width: 592px;
   }
   @include max($tablet-s) {
     gap: 10px;
     border: 8px solid $white;
+    max-width: 416px;
   }
   .imgBox {
     max-width: 560px;

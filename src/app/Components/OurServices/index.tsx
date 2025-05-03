@@ -1,13 +1,13 @@
 import React from "react";
-import styles from "./OurServices.module.scss"
+import styles from "./OurServices.module.scss";
 import VincCard from "../VincCard";
 import Vinc1 from "../../../../public/HomepageSlider/vinc_kirmizi_1.png";
 import Vinc2 from "../../../../public/HomepageSlider/vinc_sari_1.png";
 import Vinc3 from "../../../../public/HomepageSlider/vinc_yesil.png";
-import Vinc4 from "../../../../public/HomepageSlider/vinc_sari_2.png"
-import Diagram1 from "../../../../public/OurServices/kirmizi_vinc_diyagram.png"
-import Diagram2 from "../../../../public/OurServices/sari_vinc_diyagram.png"
-import Diagram3 from "../../../../public/OurServices/yesil_vinc_diyagram.png"
+import Vinc4 from "../../../../public/HomepageSlider/vinc_sari_2.png";
+import Diagram1 from "../../../../public/OurServices/kirmizi_vinc_diyagram.png";
+import Diagram2 from "../../../../public/OurServices/sari_vinc_diyagram.png";
+import Diagram3 from "../../../../public/OurServices/yesil_vinc_diyagram.png";
 
 const cardData = [
   {
@@ -44,6 +44,14 @@ const OurServices = () => {
   return (
     <div className={styles.ourServicesContainer}>
       <h2 className={styles.title}>Hizmetlerimiz</h2>
+      <div className={styles.textBox}>
+        <h2>İstanbul vinç kiralama | Samsun vinç kiralama</h2>
+        <p>
+          Sonses Vinç olarak İstanbul ve Samsun genelinde sepetli vinç ve mobil
+          vinç hizmetleri veriyoruz. Hemen bizimle iletişime geçerek
+          ihtiyaçlarınıza özel çözümler alabilirsiniz.
+        </p>
+      </div>
       <div className={styles.cardContainer}>
         {cardData.map((card) => (
           <VincCard

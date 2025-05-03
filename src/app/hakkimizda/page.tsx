@@ -9,6 +9,7 @@ export const metadata: Metadata ={
 const Hakkımızda = () => {
   return (
     <div className={styles.aboutUsPageContainer}>
+      <h1 style={{position: "absolute", left:"-9999px"}}>Hakkımızda</h1>
       <AboutUs />
     </div>
   );
