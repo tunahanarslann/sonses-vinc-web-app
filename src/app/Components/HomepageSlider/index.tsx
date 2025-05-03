@@ -7,11 +7,11 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import Vinc1 from "../../../../public/HomepageSlider/vinc_kirmizi_1.png";
-import Vinc2 from "../../../../public/HomepageSlider/vinc_kirmizi_2.png";
-import Vinc3 from "../../../../public/HomepageSlider/vinc_sari_1.png";
-import Vinc4 from "../../../../public/HomepageSlider/vinc_yesil.png";
-import Vinc5 from "../../../../public/HomepageSlider/vinc_sari_2.png";
+import Vinc1 from "../../../../public/HomepageSlider/vinc_kirmizi_1.webp";
+import Vinc2 from "../../../../public/HomepageSlider/vinc_kirmizi_2.webp";
+import Vinc3 from "../../../../public/HomepageSlider/vinc_sari_1.webp";
+import Vinc4 from "../../../../public/HomepageSlider/vinc_yesil.webp";
+import Vinc5 from "../../../../public/HomepageSlider/vinc_sari_2.webp";
 
 const sliderData = [
   { id: "1", image: Vinc1, title: "vinc_kirmizi_1" },
@@ -38,6 +38,7 @@ const HomepageSlider = () => {
               src={slide.image}
               alt={slide.title}
               fill
+              loading={index === 0 ? "eager" : "lazy"}
               priority={index === 0}
             />
           </SwiperSlide>
