@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     template: "%s - Sonses Vinç"
   },
   description: "İstanbul ve Samsun'da vinç kiralama hizmetleri için bizimle iletişime geçebilirsiniz.",
+  alternates: {
+    canonical: "https://www.sonsesvinc.com/"
+  },
   twitter: {
     card: "summary_large_image"
   }
