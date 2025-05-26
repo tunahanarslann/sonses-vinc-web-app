@@ -7,18 +7,22 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import Vinc1 from "../../../../public/HomepageSlider/vinc_kirmizi_1.webp";
-import Vinc2 from "../../../../public/HomepageSlider/vinc_kirmizi_2.webp";
-import Vinc3 from "../../../../public/HomepageSlider/vinc_sari_1.webp";
-import Vinc4 from "../../../../public/HomepageSlider/vinc_yesil.webp";
-import Vinc5 from "../../../../public/HomepageSlider/vinc_sari_2.webp";
+import Vinc6 from "../../../../public/HomepageSlider/vinc1.webp";
+import Vinc7 from "../../../../public/HomepageSlider/vinc2.webp";
+import Vinc8 from "../../../../public/HomepageSlider/vinc3.webp";
+import Vinc9 from "../../../../public/HomepageSlider/vinc4.webp";
+import Vinc10 from "../../../../public/HomepageSlider/vinc5.webp";
+import Vinc11 from "../../../../public/HomepageSlider/vinc6.webp";
+import Vinc12 from "../../../../public/HomepageSlider/vinc7.webp";
 
 const sliderData = [
-  { id: "1", image: Vinc1, title: "vinc_kirmizi_1" },
-  { id: "2", image: Vinc2, title: "vinc_kirmizi_2" },
-  { id: "3", image: Vinc3, title: "vinc_sari" },
-  { id: "4", image: Vinc4, title: "vinc_yesil" },
-  { id: "5", image: Vinc5, title: "vinc_sari_2" },
+  { id: "1", image: Vinc7, title: "vinc7" },
+  { id: "2", image: Vinc9, title: "vinc8" },
+  { id: "3", image: Vinc6, title: "vinc9" },
+  { id: "4", image: Vinc8, title: "vinc6" },
+  { id: "5", image: Vinc10, title: "vinc10" },
+  { id: "6", image: Vinc11, title: "vinc11" },
+  { id: "7", image: Vinc12, title: "vinc12" },
 ];
 
 const HomepageSlider = () => {
