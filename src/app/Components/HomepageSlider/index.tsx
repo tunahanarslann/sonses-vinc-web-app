@@ -14,6 +14,7 @@ import Vinc9 from "../../../../public/HomepageSlider/vinc4.webp";
 import Vinc10 from "../../../../public/HomepageSlider/vinc5.webp";
 import Vinc11 from "../../../../public/HomepageSlider/vinc6.webp";
 import Vinc12 from "../../../../public/HomepageSlider/vinc7.webp";
+import forkliftImg from "../../../../public/HomepageSlider/forklift_image.webp";
 
 const sliderData = [
   { id: "1", image: Vinc7, title: "vinc7" },
@@ -21,8 +22,9 @@ const sliderData = [
   { id: "3", image: Vinc6, title: "vinc9" },
   { id: "4", image: Vinc8, title: "vinc6" },
   { id: "5", image: Vinc10, title: "vinc10" },
-  { id: "6", image: Vinc11, title: "vinc11" },
-  { id: "7", image: Vinc12, title: "vinc12" },
+  { id: "6", image: forkliftImg, title: "forklift_img" },
+  { id: "7", image: Vinc11, title: "vinc11" },
+  { id: "8", image: Vinc12, title: "vinc12" },
 ];
 
 const HomepageSlider = () => {
