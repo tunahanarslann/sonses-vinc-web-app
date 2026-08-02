@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  sassOptions: {
+    silenceDeprecations: ["import"],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
