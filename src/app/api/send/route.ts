@@ -56,9 +56,9 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Resend error:", JSON.stringify(error));
       return NextResponse.json(
-        { error: "E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin." },
+        { error: "E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin.", details: error },
         { status: 500 }
       );
     }
@@ -67,10 +67,10 @@ export async function POST(req: NextRequest) {
       { success: true, messageId: data?.id },
       { status: 200 }
     );
-  } catch (error) {
-    console.error("API error:", error);
+  } catch (err) {
+    console.error("API error:", err);
     return NextResponse.json(
-      { error: "Bir hata oluştu. Lütfen daha sonra tekrar deneyin." },
+      { error: "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.", details: String(err) },
       { status: 500 }
     );
   }
