@@ -1,7 +1,224 @@
 @import "../styles/index.scss";
 
-.aboutUsPageContainer{
+.aboutUsPageSection {
+  width: 100%;
+  background: $secondary-bg-color;
+  padding: 60px 0 48px 0;
+  display: flex;
+  justify-content: center;
+
+  @include max($mobile-l) {
+    padding: 48px 0;
+  }
+}
+
+.aboutUsPageContainer {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 48px;
+  padding: 0 24px;
+
+  @include max($tablet-m) {
+    gap: 32px;
+  }
+}
+
+.pageTitle {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: $secondary-color;
+  text-align: center;
+}
+
+.topRow {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+
+  @include max($tablet-m) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+
+  @include max($tablet-m) {
+    gap: 32px;
+  }
+}
+
+.imageBox {
+  position: relative;
+  width: 380px;
+  height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px $shadow-color;
+  flex-shrink: 0;
+  background: $gray-light;
+
+  @include max($tablet-m) {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    max-width: 340px;
+    height: 220px;
+    margin: 0 auto;
+  }
+}
+
+.aboutImg {
+  object-fit: cover;
+}
+
+.textBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  gap: 18px;
+  align-items: center;
+
+  @include max($tablet-m) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: $secondary-color;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.15rem;
+  color: $gray-dark;
+  max-width: 680px;
+  text-align: center;
+}
+
+.features {
+  padding: 24px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featuresTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $secondary-color;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 32px;
+  margin-top: 18px;
+
+  @include max($tablet-m) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    color: $primary-color;
+    margin-bottom: 2px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $secondary-color;
+    font-weight: 700;
+  }
+}
+
+.visionMissionRow {
+  display: flex;
+  gap: 48px;
+
+  @include max($tablet-m) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.visionBox,
+.missionBox {
+  flex: 1;
+  background: $primary-bg-color;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px $shadow-color;
+  padding: 32px 24px;
+
+  h2 {
+    color: $primary-color;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: $gray-dark;
+    font-size: 1.1rem;
+  }
+}
+
+.teamRow {
+  margin-top: 24px;
+}
+
+.teamTitle {
+  font-size: 1.5rem;
+  color: $primary-color;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  justify-items: center;
+}
+
+.teamCard {
+  background: $secondary-bg-color;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px $shadow-color;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.teamImgBox {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: $gray-light;
+  margin-bottom: 8px;
+}
+
+.teamName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $secondary-color;
+}
+
+.teamRole {
+  font-size: 1rem;
+  color: $gray-dark;
 }

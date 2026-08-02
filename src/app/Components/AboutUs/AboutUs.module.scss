@@ -1,27 +1,151 @@
 @import "../../styles/index.scss";
 
+.aboutUsSection {
+  width: 100%;
+  background: $primary-bg-color;
+  padding: clamp(40px, 8vw, 80px) 0;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, $primary-color 30%, $primary-dark 70%, transparent 100%) 1;
+
+  @include max($tablet-l) {
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, transparent 0%, $primary-color 30%, $primary-dark 70%, transparent 100%) 1;
+  }
+
+  @include max($mobile-l) {
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(90deg, transparent 0%, $primary-color 30%, $primary-dark 70%, transparent 100%) 1;
+  }
+}
+
 .aboutUsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 0 24px;
+
+  @include max($tablet-m) {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 12px;
+  }
+}
+
+.imageBox {
+  position: relative;
+  width: 380px;
+  height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px $shadow-color;
+  flex-shrink: 0;
+  background: $gray-light;
+
+  @include max($tablet-m) {
+    width: 100%;
+    max-width: 340px;
+    height: 220px;
+    margin: 0 auto;
+  }
+}
+
+.aboutImg {
+  object-fit: cover;
+}
+
+.textBox {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  font-family: $fontEudoxus, sans-serif;
-  color: $primary-color;
-  gap: 30px;
-  padding: 20px;
-  max-width: 550px;
+  gap: 18px;
+  align-items: flex-start;
+
   @include max($tablet-m) {
-    gap: 10px;
-    padding: 10px;
-    max-width: 490px;
+    align-items: center;
+    text-align: center;
   }
-  @include max($tablet-s) {
-    max-width: 430px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: $secondary-color;
+  position: relative;
+  padding-bottom: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 72px;
+    height: 4px;
+    background: linear-gradient(90deg, $primary-color, $primary-dark);
+    border-radius: 2px;
   }
-  .title {
-    font-size: clamp(28px, 4.5vw, 48px);
-    font-weight: 700;
+
+  @include max($tablet-m) {
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
-  .text {
-    font-size: clamp(16px, 2.5vw, 20px);
-    font-weight: 500;
+}
+
+.text {
+  font-size: 1.15rem;
+  color: $gray-dark;
+  max-width: 520px;
+}
+
+.moreBtn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 32px;
+  background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+  color: $white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 2px 16px $shadow-color;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+    transform: scale(1.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 }

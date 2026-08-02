@@ -2,9 +2,30 @@
 
 :root {
   background: $primary-bg-color;
+  color: $secondary-color;
+  font-family: $fontEudoxus, sans-serif;
 }
+
+body {
+  background: $primary-bg-color;
+  color: $secondary-color;
+  font-family: $fontEudoxus, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover {
+    // color: $accent-color;
+  }
 }

@@ -1,82 +1,356 @@
 @import "../../styles/index.scss";
 
+// ─── Ana Navbar Çubuğu ────────────────────────────────────────────────────
+// Sticky davranışı LayoutWrapper'daki nav.navContainer üzerinde tanımlıdır.
 .navbarContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
   width: 100%;
-  height: 120px;
-  padding: 0 20px;
-  font-family: $fontEudoxus, sans-serif;
-  position: relative;
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 92px;
+  padding: 0 32px;
+  border-bottom: 3px solid $primary-color;
+
   @include max($desktop-s) {
-    height: 100px;
+    padding: 0 24px;
   }
-  @include max($tablet-m) {
+
+  @include max($tablet-l) {
     height: 80px;
-  }
-  @include max($tablet-s) {
-    padding: 0 10px;
-  }
-  .logoLink {
-    text-decoration: none;
-    .navbarLogo {
-      max-width: 300px;
-      max-height: 120px;
-      @include max($desktop-s) {
-        max-width: 250px;
-        max-height: 100px;
-      }
-      @include max($tablet-m) {
-        max-width: 200px;
-        max-height: 80px;
-      }
-      .logoImg {
-        width: 100%;
-        height: auto;
-      }
-    }
+    padding: 0 24px;
   }
 
-  .navbarMenuBox {
-    display: flex;
-    .navbarMenu {
-      display: flex;
-      gap: 20px;
-      @include max($tablet-m) {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        right: 0;
-      }
-      &.mobile {
-        display: flex;
-        padding: 15px 0;
-        z-index: 999;
-        background-color: $secondary-bg-color;
-        box-shadow: 0 2px 4px $shadow-color;
-      }
-    }
+  @include max($mobile-l) {
+    height: 64px;
+    padding: 0 16px;
   }
 
-  .mobileMenuBtnBox {
+  @include max($mobile-l) {
+    border-bottom: 2px solid $primary-color;
+  }
+}
+
+// ─── Logo ─────────────────────────────────────────────────────────────────
+.logoLink {
+  text-decoration: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+
+  @include max($tablet-l) {
+    height: 64px;
+  }
+
+  @include max($mobile-l) {
+    height: 52px;
+  }
+}
+
+// ─── Desktop Menü ─────────────────────────────────────────────────────────
+.desktopMenu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+
+  @include max($tablet-l) {
     display: none;
-    @include max($tablet-m) {
-      display: flex;
-      width: 32px;
-      height: 32px;
-      justify-content: center;
-      align-items: center;
+  }
+}
+
+// ─── CTA Buton ────────────────────────────────────────────────────────────
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+  color: $white;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+    transform: scale(1.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    &::before {
+      left: 100%;
     }
-    .mobileMenuBtn {
-      width: 100%;
-      border: none;
-      background: none;
-      cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+.ctaBtnIcon {
+  font-size: 0.82rem;
+}
+
+// ─── Mobil Hamburger ──────────────────────────────────────────────────────
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: $primary-light;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $primary-color;
+    color: $white;
+  }
+
+  @include max($tablet-l) {
+    display: flex;
+  }
+}
+
+// ─── Mobil Drawer ─────────────────────────────────────────────────────────
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  background: $white;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: -4px 0 32px rgba(45, 45, 45, 0.18);
+  overflow-y: auto;
+
+  &.drawerOpen {
+    transform: translateX(0);
+  }
+
+  @include min($tablet-l) {
+    display: none;
+  }
+}
+
+// ─── Drawer Başlık (Logo + Kapat) ─────────────────────────────────────────
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 2px solid $primary-color;
+  flex-shrink: 0;
+}
+
+.drawerLogoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.drawerLogo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.drawerCloseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: $primary-light;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $primary-color;
+    color: $white;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid $gray-light;
+  padding: 20px 20px 20px;
+  margin-bottom: 0;
+}
+
+.mobileCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  margin: 20px 20px 0;
+  background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+  color: $white;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+    transform: scale(1.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    &::before {
+      left: 100%;
     }
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  svg {
+    font-size: 0.9rem;
+  }
+}
+
+// ─── Drawer İletişim Bilgileri ─────────────────────────────────────────────
+.drawerContactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 20px 0;
+  border-top: 1px solid $gray-light;
+  margin-top: 20px;
+}
+
+.drawerContactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: $gray-dark;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  span {
+    flex: 1;
+  }
+}
+
+.drawerContactIcon {
+  color: $primary-color;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 0.88rem;
+}
+
+// ─── Drawer Sosyal Medya ─────────────────────────────────────────────
+.drawerSocials {
+  display: flex;
+  gap: 12px;
+  padding: 20px 20px 24px;
+  margin-top: auto;
+}
+
+.drawerSocialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: $secondary-color;
+  color: $white;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+
+  &:hover {
+    background: $primary-color;
+    transform: scale(1.12);
+  }
+}
+
+// ─── Overlay ──────────────────────────────────────────────────────────────
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.25s ease;
+
+  @include min($tablet-l) {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

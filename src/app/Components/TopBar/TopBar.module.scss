@@ -1,0 +1,83 @@
+@import "../../styles/index.scss";
+
+.topBar {
+  width: 100%;
+  background: $secondary-color;
+
+  @include max($tablet-l) {
+    display: none;
+  }
+}
+
+.topBarInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 9px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topBarContacts {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.topBarIcon {
+  color: $primary-color;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+}
+
+.topBarDivider {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 6px;
+}
+
+.topBarSocial {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+
+  &:hover {
+    background: $primary-color;
+    color: $white;
+    transform: scale(1.12);
+  }
+}

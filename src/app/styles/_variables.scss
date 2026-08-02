@@ -1,10 +1,16 @@
-// Colors
-$primary-color: #000000;
-$secondary-color: #4f4f4f;
-$primary-bg-color: #dadada;
-$secondary-bg-color: #cfcfcf;
-$shadow-color: #0000001a;
+// Colors — Sonses Vinç brand palette (logo: orange + dark charcoal)
+$primary-color: #F47920;       // Logo turuncu
+$primary-dark: #C85E10;        // Koyu turuncu (hover)
+$primary-light: #FFF0E3;       // Çok açık turuncu (arka plan vurgusu)
+$secondary-color: #2D2D2D;     // Logo koyu gri/siyah
+$secondary-light: #4A4A4A;     // Orta gri metin
+$primary-bg-color: #F6F6F6;    // Sayfa arka planı (hafif gri)
+$secondary-bg-color: #FFFFFF;  // Bölüm arka planı (beyaz)
+$accent-color: #F47920;        // Accent (primary ile aynı)
+$shadow-color: rgba(45, 45, 45, 0.12);
 $white: #ffffff;
+$gray-light: #E8E8E8;
+$gray-dark: #555555;
 
 // Fonts
 $fontEudoxus: var(--font-eudoxus-sans);

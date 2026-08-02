@@ -1,33 +1,29 @@
 import React from "react";
 import styles from "./Contact.module.scss";
-import PhoneIcon from "../../../../public/Contact/phone.svg";
-
-const contactData = [
-  { id: "1", phoneNumber: "+90 (533) 717 5704", name: "Arslan Sonses" },
-  { id: "2", phoneNumber: "+90 (533) 514 9264", name: "Adnan Sonses" },
-];
+import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import ContactForm from "../ContactForm";
 
 const Contact = () => {
   return (
-    <div className={styles.contactContainer}>
-      <div className={styles.contactHeader}>
-        <h2 className={styles.title}>İletişim</h2>
-        <p className={styles.text}>
-          Aşağıdaki numaralardan bizimle iletişime geçebilirsiniz.
-        </p>
-      </div>
-      <div className={styles.contactCards}>
-        {contactData.map((data) => (
-          <div key={data.id} className={styles.contactCard}>
-            <PhoneIcon className={styles.phoneIcon} width={72} height={72} />
-            <div className={styles.contactInfo}>
-              <a href={`tel:${data.phoneNumber}`} className={styles.phoneNumber}>{data.phoneNumber}</a>
-              <p className={styles.name}>{data.name}</p>
-            </div>
+    <section className={styles.contactSection}>
+      <div className={styles.contactContainer}>
+        <div className={styles.leftBox}>
+          <div className={styles.leftContent}>
+            <h2 className={styles.title}>İletişim</h2>
+            <p className={styles.text}>
+              Hemen iletişim formunu doldurun, en kısa sürede size dönüş yapalım. Dilerseniz WhatsApp veya telefon ile de ulaşabilirsiniz.
+            </p>
           </div>
-        ))}
+          <ContactForm />
+        </div>
+        <div className={styles.rightBox}>
+          {/* <div className={styles.mapBox}>
+            <FaMapMarkerAlt className={styles.mapIcon} />
+            <span>Harita burada görünecek (Google Maps embed veya görsel)</span>
+          </div> */}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

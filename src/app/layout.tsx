@@ -60,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body className={`${eudoxusSans.variable}`}>
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>

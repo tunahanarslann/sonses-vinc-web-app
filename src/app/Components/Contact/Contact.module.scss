@@ -1,66 +1,245 @@
 @import "../../styles/index.scss";
 
+.contactSection {
+  width: 100%;
+  background: $primary-bg-color;
+  padding: clamp(40px, 8vw, 80px) 0;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, $primary-color 30%, $primary-dark 70%, transparent 100%) 1;
+
+  @include max($tablet-l) {
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, transparent 0%, $primary-color 30%, $primary-dark 70%, transparent 100%) 1;
+  }
+
+  @include max($mobile-l) {
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(90deg, transparent 0%, $primary-color 30%, $primary-dark 70%, transparent 100%) 1;
+  }
+}
+
 .contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  padding: 0 24px;
+
+  @include max($tablet-m) {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 12px;
+  }
+}
+
+.leftBox {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  font-family: $fontEudoxus, sans-serif;
-  color: $primary-color;
-  gap: 40px;
-  padding: 20px;
-  @include max($tablet-m) {
-    gap: 25px;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: $secondary-color;
+  position: relative;
+  padding-bottom: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 72px;
+    height: 4px;
+    background: linear-gradient(90deg, $primary-color, $primary-dark);
+    border-radius: 2px;
+  }
+}
+
+.text {
+  font-size: 1.15rem;
+  color: $gray-dark;
+  max-width: 520px;
+  margin-bottom: 24px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  input,
+  textarea {
+    padding: 12px 16px;
+    border: 1.5px solid $gray-light;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: $secondary-bg-color;
+    color: $secondary-color;
+    resize: none;
+    transition: border 0.2s;
+
+    &:focus {
+      border: 1.5px solid $primary-color;
+      outline: none;
+    }
+  }
+
+  button {
+    margin-top: 6px;
+    padding: 12px 0;
+    background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+    color: $white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 2px 16px $shadow-color;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      background: linear-gradient(90deg, $primary-color 60%, $primary-dark 100%);
+      transform: scale(1.04);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+  }
+
+
+  .successMessage {
+    color: #27ae60;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
     padding: 10px;
+    background: rgba(39, 174, 96, 0.08);
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
   }
-  .contactHeader {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    @include max($tablet-m) {
-      gap: 10px;
-    }
-    .title {
-      font-size: clamp(28px, 4.5vw, 48px);
-      font-weight: 700;
-    }
-    .text {
-      font-size: clamp(16px, 2.5vw, 20px);
-      font-weight: 500;
-    }
+
+  .errorMessage {
+    color: #e74c3c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    background: rgba(231, 76, 60, 0.08);
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
   }
-  .contactCards {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    @include max($tablet-m) {
-      gap: 20px;
-    }
-    .contactCard {
-      display: flex;
-      gap: 20px;
-      .phoneIcon {
-        @include max($tablet-s) {
-          width: 54px;
-          height: 54px;
-        }
-      }
-      .contactInfo {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        @include max($tablet-s) {
-          gap: 4px;
-        }
-        .phoneNumber {
-          font-size: 16px;
-        }
-        .name {
-          font-size: 20px;
-          font-weight: 700;
-          @include max($tablet-s) {
-            font-size: 16px;
-          }
-        }
-      }
-    }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  input:disabled,
+  textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.quickLinks {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.quickBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: $secondary-bg-color;
+  color: $primary-color;
+  border: 1.5px solid $primary-color;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+  text-decoration: none;
+  box-shadow: 0 2px 8px $shadow-color;
+
+  &:hover {
+    background: $primary-color;
+    color: $white;
+    border: 1.5px solid $primary-color;
+    transform: scale(1.07);
+  }
+
+  svg {
+    font-size: 1.2em;
+  }
+}
+
+.rightBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapBox {
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  background: $gray-light;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px $shadow-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: $gray-dark;
+  font-size: 1.1rem;
+
+  .mapIcon {
+    font-size: 2.2rem;
+    color: $primary-color;
   }
 }

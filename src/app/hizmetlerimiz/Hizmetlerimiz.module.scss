@@ -1,7 +1,282 @@
 @import "../styles/index.scss";
 
-.ourServicesPageContainer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.ourServicesPageSection {
+  width: 100%;
+  background: $primary-bg-color;
+  padding: 60px 0 48px 0;
+
+  @include max($mobile-l) {
+    padding: 48px 0 36px 0;
+  }
+}
+
+.ourServicesPageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 0 24px;
+}
+
+.pageTitle {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: $secondary-color;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+
+  @include max($mobile-l) {
+    margin-bottom: 0;
+  }
+}
+
+.pageDesc {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: $gray-dark;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+
+  @include max($mobile-l) {
+    margin-bottom: 2rem;
+  }
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-top: 3rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.serviceCard {
+  background: #fff;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 480px) {
+    &:hover {
+      transform: none; // Disable hover effect on mobile
+    }
+  }
+}
+
+.iconBox {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, $primary-color, $primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: $white;
+
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+.cardTitle {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  font-weight: 600;
+  color: $secondary-color;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: $gray-dark;
+  line-height: 1.6;
+}
+
+.servicesSection {
+  margin-bottom: 5rem;
+  padding: 0 1rem;
+
+  @include max($mobile-l) {
+    margin-bottom: 4rem;
+  }
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: $secondary-color;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, $primary-color, $primary-dark);
+    border-radius: 2px;
+  }
+}
+
+.sectionDesc {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: $gray-dark;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+.cranesSection {
+  margin-bottom: 5rem;
+  padding: 0 1rem;
+}
+
+.cranesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: 3rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.craneCard {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  min-width: 0; // Prevent overflow on small screens
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 480px) {
+    &:hover {
+      transform: none; // Disable hover effect on mobile
+    }
+  }
+}
+
+.craneImageBox {
+  position: relative;
+  width: 100%;
+  height: clamp(200px, 50vw, 250px);
+  overflow: hidden;
+}
+
+.craneImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.craneCard:hover .craneImage {
+  transform: scale(1.05);
+
+  @media (max-width: 480px) {
+    transform: none; // Disable hover effect on mobile
+  }
+}
+
+.craneInfo {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.craneName {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  font-weight: 600;
+  color: $secondary-color;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.craneSpecs {
+  margin-bottom: 1rem;
+}
+
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+.specLabel {
+  font-weight: 500;
+  color: $gray-dark;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.specValue {
+  font-weight: 600;
+  color: $primary-color;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.craneFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.featureTag {
+  background: linear-gradient(135deg, $primary-color, $primary-dark);
+  color: $white;
+  padding: clamp(0.3rem, 2vw, 0.4rem) clamp(0.6rem, 2.5vw, 0.8rem);
+  border-radius: 20px;
+  font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
