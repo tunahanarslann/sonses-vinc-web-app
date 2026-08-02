@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     },
   },
   sassOptions: {
-    silenceDeprecations: ["import"],
+    silenceDeprecations: ["import", "legacy-js-api"],
   },
   webpack(config) {
     config.module.rules.push({
