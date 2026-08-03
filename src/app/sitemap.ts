@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `https://www.sonsesvinc.com/referanslar`,
+      lastModified: new Date(),
+      changeFrequency: "always",
+      priority: 0.9,
+    },
+    {
       url: `https://www.sonsesvinc.com/iletisim`,
       lastModified: new Date(),
       changeFrequency: "always",
